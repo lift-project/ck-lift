@@ -1,0 +1,33 @@
+{
+  "customize": {
+    "env_prefix": "CK_ENV_LIFT", 
+    "skip_add_to_bin": "yes", 
+    "skip_add_to_ld_path": "yes", 
+    "skip_add_to_path": "yes"
+  }, 
+  "deps": {
+    "java-compiler": {
+      "local": "yes", 
+      "name": "Java compiler", 
+      "sort": 10, 
+      "tags": "compiler,lang-java,v1.8"
+    },
+    "sbt-tool": {
+      "local": "yes", 
+      "name": "SBT tool", 
+      "sort": 20, 
+      "tags": "tool,sbt"
+    },
+    "lib-opencl": {
+      "local": "yes", 
+      "name": "OpenCL library", 
+      "sort": 30, 
+      "tags": "lib,opencl"
+    }
+  }, 
+  "soft_name": "Compiler Lift", 
+  "tags": [
+    "compiler", 
+    "lift"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "auto_detect": "yes",
+  "customize": {
+    "add_only_with_version": "yes",
+    "add_to_path": "yes",
+    "build_dir_name": "sbt",
+    "check_that_exists": "yes",
+    "ck_version": 10,
+    "env_prefix": "CK_ENV_TOOL_SBT",
+    "limit_recursion_dir_search": {
+      "linux": 3,
+      "win": 4
+    },
+    "only_for_target_os_tags": [
+      "linux"
+    ],
+    "soft_file": {
+      "linux": "sbt"
+    },
+    "soft_file_from_host_os": "yes",
+    "soft_version_cmd": {
+      "linux": "about  > $#filename#$ 2>&1"
+    },
+    "soft_path_example": {
+      "linux": "/usr/bin/sbt"
+    }
+  },
+  "deps": {
+    "java-compiler": {
+      "local": "yes", 
+      "name": "Java compiler", 
+      "sort": 10, 
+      "tags": "compiler,lang-java"
+    } 
+  }, 
+  "env": {
+  },
+  "soft_name": "Scala SBT tool",
+  "tags": [
+    "tool",
+    "scala",
+    "sbt"
+  ]
+}
