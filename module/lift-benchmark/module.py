@@ -120,14 +120,49 @@ def record_output(i, meta, output):
     post_processing_script = i.get("post_processing_script", "")
     if post_processing_script != "":
         ck.out("TODO: Call custom post processing script")
-        d = {}
+        cs = []
     else:
-        d = parse_output(output)
+        cs = parse_output(output)
+
+    for c in cs:
+        store_experiment(c, output,
+                         i['data_uoa'],
+                         i.get('tags', ''),
+                         meta,
+                         record_uoa, record_repo)
+
+    return {'return': 0}
+
+
+def parse_output(output):
+    import re
+    import json
+
+    c = {}
+    cs = []
+    for line in output.splitlines():
+
+        match = re.search("Benchmark: (.*)", line)
+        if match:
+            c = {"variant": match.group(1)}
+            cs.append(c)
+
+        match = re.search("MEDIAN: (.*) ms", line)
+        if match:
+            c["median"] = match.group(1)
+
+    return cs
+
+
+def store_experiment(c, output, data_uoa, t, meta, record_uoa, record_repo):
+    d = {'characteristics': c,
+         'choices': {'data_uoa': data_uoa}}
+    platform = ck.access({'action': 'detect', 'module_uoa': 'platform'})
+    d['features'] = {'platform': platform.get('features', '')}
 
     # TODO: make tags work, because currently they totally don't ...
     # Maybe have to ask Grigori about this.
     tags = meta["dict"]["tags"]
-    t = i.get('tags', '')
     if t != '':
         tags += ',' + t
 
@@ -162,28 +197,6 @@ def record_output(i, meta, output):
 
     ck.out("Saved parsed json file at " + json_file_name)
     ck.out("Saved log file at " + log_file_name)
-
-    return {'return': 0}
-
-
-def parse_output(output):
-    import re
-    import json
-
-    c = {}
-    cs = []
-    for line in output.splitlines():
-
-        match = re.search("Benchmark: (.*)", line)
-        if match:
-            c = {"benchmark": match.group(1)}
-            cs.append(c)
-
-        match = re.search("MEDIAN: (.*) ms", line)
-        if match:
-            c["median"] = match.group(1)
-
-    return {"characteristics_list": cs}
 
 ##############################################################################
 # Prepare a lift benchmark

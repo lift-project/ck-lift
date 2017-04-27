@@ -1,0 +1,24 @@
+{
+  "flat_keys": [
+    "##features#platform#cpu#name", 
+    "##choices#data_uoa", 
+    "##characteristics#variant",
+    "##characteristics#median"
+  ], 
+  "flat_keys_desc": [
+    {
+      "desc": "CPU name"
+    }, 
+    {
+      "desc": "Benchmark UOA", 
+      "module_uoa": "10209c9944e509b1", 
+      "type": "uoa"
+    }, 
+    {
+      "desc": "Variant"
+    },
+    {
+      "desc": "Median execution time in ms"
+    }
+  ]
+}
