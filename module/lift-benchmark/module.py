@@ -165,14 +165,14 @@ def store_experiment(c, output, data_uoa, t, meta, record_uoa, record_repo):
     tags = meta["dict"]["tags"]
     if t != '':
         tags += ',' + t
+    d['tags'] = tags
 
     r = ck.access({
         'action': 'add',
         'module_uoa': 'experiment',
         'experiment_uoa': record_uoa,
         'experiment_repo_uoa': record_repo,
-        'dict': d,
-        'tags': tags})
+        'dict': d})
     if r['return'] > 0:
         return r
 
