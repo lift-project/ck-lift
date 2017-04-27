@@ -1,0 +1,10 @@
+{
+  "actions": {
+    "prepare": {
+      "desc": "Prepare a lift benchmark"
+    }, 
+    "run": {
+      "desc": "Run a lift benchmark"
+    }
+  }
+}

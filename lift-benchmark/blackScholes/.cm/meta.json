@@ -1,0 +1,6 @@
+{
+  "name": "BlackScholes",
+  "main_class": "benchmarks.BlackScholes",
+  "java_options": "",
+  "tags": "lift-benchmark,BlackScholes"
+}
