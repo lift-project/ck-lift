@@ -9,6 +9,11 @@ for the [Lift compiler](http://www.lift-project.org). It is used
 to unify and automate installation and usage of the Lift compiler
 across diverse platforms.
 
+# Acknowledgedments
+
+This work was supported by the [https://www.hipeac.net/mobility/collaborations HiPEAC collaboration grant] 
+between the [http://www.ed.ac.uk University of Edinburgh] and [http://dividiti.com dividiti].
+
 # Installation (Linux or Windows)
 
 ## Pre-requisities
@@ -29,13 +34,14 @@ $ ck install package --tags=compiler,lift
 $ ck run lift-benchmark
 ```
 
-## Next steps
+# Next steps
 
 We plan to integrate Lift with CK crowd-tuning technology
 to crowdsource and speed up optimization of various math. algorithms
 across diverse platforms and environments: http://cKnowledge.org/repo
 
-## Feedback
+
+# Feedback
 
 Get in touch with Lift developers via official project website:
 * http://lift-project.org
