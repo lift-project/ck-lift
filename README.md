@@ -9,7 +9,7 @@ for the [Lift compiler](http://www.lift-project.org). It is used
 to unify and automate installation and usage of the Lift compiler
 across diverse platforms.
 
-# Acknowledgedments
+# Acknowledgments
 
 This work was supported by the [https://www.hipeac.net/mobility/collaborations HiPEAC collaboration grant] 
 between the [http://www.ed.ac.uk University of Edinburgh] and [http://dividiti.com dividiti].
